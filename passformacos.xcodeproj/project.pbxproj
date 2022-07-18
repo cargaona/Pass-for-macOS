@@ -30,7 +30,7 @@
 		75E07C15216E0DA700EA9CBD /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E07C14216E0DA700EA9CBD /* SafariExtensionHandler.swift */; };
 		75E07C17216E0DA700EA9CBD /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E07C16216E0DA700EA9CBD /* SafariExtensionViewController.swift */; };
 		75E07C1A216E0DA700EA9CBD /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E07C18216E0DA700EA9CBD /* SafariExtensionViewController.xib */; };
-		75E07C23216E0DA700EA9CBD /* extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75E07C0F216E0DA700EA9CBD /* extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		75E07C23216E0DA700EA9CBD /* extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 75E07C0F216E0DA700EA9CBD /* extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		75E72FEC25E6241E00C914B4 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 75E72FEB25E6241E00C914B4 /* KeyboardShortcuts */; };
 /* End PBXBuildFile section */
 
@@ -55,15 +55,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75E07C27216E0DA700EA9CBD /* Embed App Extensions */ = {
+		75E07C27216E0DA700EA9CBD /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				75E07C23216E0DA700EA9CBD /* extension.appex in Embed App Extensions */,
+				75E07C23216E0DA700EA9CBD /* extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -195,7 +195,7 @@
 				75E07BD8216E0D8D00EA9CBD /* Sources */,
 				75E07BD9216E0D8D00EA9CBD /* Frameworks */,
 				75E07BDA216E0D8D00EA9CBD /* Resources */,
-				75E07C27216E0DA700EA9CBD /* Embed App Extensions */,
+				75E07C27216E0DA700EA9CBD /* Embed Foundation Extensions */,
 				75B908B1244367EB005DBEEC /* CopyFiles */,
 			);
 			buildRules = (
@@ -236,7 +236,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Artur Sterz";
 				TargetAttributes = {
 					75E07BDB216E0D8D00EA9CBD = {
@@ -398,6 +398,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -406,6 +407,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -461,6 +463,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -469,6 +472,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -497,11 +501,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = passformacos/passformacos.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.11.4;
-				DEVELOPMENT_TEAM = BR355MFMD5;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = Q53VP4K33W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,11 +517,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 0.11.4;
-				PRODUCT_BUNDLE_IDENTIFIER = de.artursterz.passformacos;
+				PRODUCT_BUNDLE_IDENTIFIER = charlie.passformacos;
 				PRODUCT_NAME = "Pass for macOS";
-				PROVISIONING_PROFILE_SPECIFIER = "Pass for macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -527,11 +532,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = passformacos/passformacos.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.11.4;
-				DEVELOPMENT_TEAM = BR355MFMD5;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = Q53VP4K33W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,11 +548,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 0.11.4;
-				PRODUCT_BUNDLE_IDENTIFIER = de.artursterz.passformacos;
+				PRODUCT_BUNDLE_IDENTIFIER = charlie.passformacos;
 				PRODUCT_NAME = "Pass for macOS";
-				PROVISIONING_PROFILE_SPECIFIER = "Pass for macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -555,10 +561,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.11.4;
-				DEVELOPMENT_TEAM = BR355MFMD5;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = Q53VP4K33W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -566,11 +573,11 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 0.11.4;
-				PRODUCT_BUNDLE_IDENTIFIER = de.artursterz.passformacos.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = charlie.passformacos.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Pass for macOS Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -580,10 +587,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.11.4;
-				DEVELOPMENT_TEAM = BR355MFMD5;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = Q53VP4K33W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -591,11 +599,11 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 0.11.4;
-				PRODUCT_BUNDLE_IDENTIFIER = de.artursterz.passformacos.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = charlie.passformacos.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Pass for macOS Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};

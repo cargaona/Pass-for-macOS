@@ -114,6 +114,22 @@ class Passwordstore {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }
+    
+    func passShellCommandOTP(passSubCommand: String) -> String {
+        let shell = ProcessInfo.processInfo.environment["SHELL"]
+        
+        let task = Process()
+        
+        task.launchPath = shell
+        task.arguments = ["-l", "-c", "echo '\(passSubCommand)' | xargs pass otp"]
+
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.launch()
+
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+    }
 
     func passDecrypt(pathToFile: String) -> String {
         return passShellCommand(passSubCommand: pathToFile)
@@ -121,6 +137,9 @@ class Passwordstore {
 
     func passwordToClipboard(pathToFile: String) -> String {
         let subCommand = "-c \(pathToFile)"
+        if pathToFile.contains("/otp-"){
+            return passShellCommandOTP(passSubCommand: subCommand)
+        }
         return passShellCommand(passSubCommand: subCommand)
     }
 
